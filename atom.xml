@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>TwrightJay的博客</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-03-06T06:59:12.431Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>TwrightJay</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shardingsphere 源码分析</title>
+    <link href="http://example.com/2022/03/06/shardingsphere-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/"/>
+    <id>http://example.com/2022/03/06/shardingsphere-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</id>
+    <published>2022-03-06T06:58:05.000Z</published>
+    <updated>2022-03-06T06:59:12.431Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span> ]]></content>
+    
+    
+    <summary type="html">点击阅读前文前, 首页能看到的文章的简短描述</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA 泛型介绍</title>
+    <link href="http://example.com/2022/03/06/JAVA-%E6%B3%9B%E5%9E%8B%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://example.com/2022/03/06/JAVA-%E6%B3%9B%E5%9E%8B%E4%BB%8B%E7%BB%8D/</id>
+    <published>2022-03-06T06:52:20.000Z</published>
+    <updated>2022-03-06T06:57:28.239Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span> <h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>​        集合里面存储了多个类型（某些情况下容器可能会存储多种类型的数据），如果数据量较多，转型的时候难免会出现异常，而这些都是无法在编译期得知的。而泛型一方面让我们只能往集合中添加一种类型的数据，同时可以让我们在编译期就发现这些错误，避免运行时异常的发生，提升代码的健壮性。</p><h2 id="Java泛型介绍"><a href="#Java泛型介绍" class="headerlink" title="Java泛型介绍"></a>Java泛型介绍</h2><p>​    下面我们来介绍Java泛型的相关内容，下面会介绍以下几个方面：</p><ul><li><p>Java泛型类</p></li><li><p>Java泛型方法</p></li><li><p>Java泛型接口</p></li><li><p>Java泛型擦除及其相关内容</p></li><li><p>Java泛型通配符</p><h3 id="Java泛型类"><a href="#Java泛型类" class="headerlink" title="Java泛型类"></a>Java泛型类</h3><p>​    类结构是面向对象中最基本的元素，如果我们的类需要有很好的扩展性，那么我们可以将其设置成泛型的。假设我们需要一个数据的包装类，通过传入不同类型的数据，可以存储相应类型的数据。我们看看这个简单的泛型类的设计：</p></li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">DataHolder</span>&lt;T&gt;&#123;</span><br><span class="line">    T item;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setData</span><span class="params">(T t)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.item=t;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> T <span class="title function_">getData</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.item;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>泛型类定义时只需要在类名后面加上类型参数即可，当然你也可以添加多个参数，类似于&lt;K,V&gt;,&lt;T,E,K&gt;等。这样我们就可以在类里面使用定义的类型参数。<br> 泛型类最常用的使用场景就是“元组”的使用。我们知道方法return返回值只能返回单个对象。如果我们定义一个泛型类，定义2个甚至3个类型参数，这样我们return对象的时候，构建这样一个“元组”数据，通过泛型传入多个对象，这样我们就可以一次性方法多个数据了</p><h3 id="Java泛型方法"><a href="#Java泛型方法" class="headerlink" title="Java泛型方法"></a>Java泛型方法</h3><p>​    前面我们介绍的泛型是作用于整个类的，现在我们来介绍泛型方法。泛型方法既可以存在于泛型类中，也可以存在于普通的类中。如果使用泛型方法可以解决问题，那么应该尽量使用泛型方法。下面我们通过例子来看一下泛型方法的使用：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">DataHolder</span>&lt;T&gt;&#123;</span><br><span class="line">    T item;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setData</span><span class="params">(T t)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.item=t;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> T <span class="title function_">getData</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.item;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 泛型方法</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> e</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> &lt;E&gt; <span class="keyword">void</span> <span class="title function_">PrinterInfo</span><span class="params">(E e)</span> &#123;</span><br><span class="line">    System.out.println(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">集合里面存储了多个类型（某些情况下容器可能会存储多种类型的数据），如果数据量较多，转型的时候难免会出现异常，而这些都是无法在编译期得知的。而泛型一方面让我们只能往集合中添加一种类型的数据，同时可以让我们在编译期就发现这些错误，避免运行时异常的发生，提升代码的健壮性</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>
