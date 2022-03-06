@@ -86,7 +86,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h1><p>​        一般的代码要求类型必须是确定的，这对可以被不同的类型复用的代码产生了极大的限制。</p>
+<p>将类型声明为超类或接口可以在一定范围内实现代码的复用，但这也只是将限制范围扩到了超类及其子类或实现了接口的类，在一些情况下这个范围还是不能满足到我们，尤其java是单根继承的。我们希望的是“非特定类型”的编码，而不是一个具体的类或接口。</p>
+<p>Java 5开始引入的泛型可以支持我们编写出“非特定类型”的代码。泛型实现了将类型参数化，在定义类、接口或方法时声明类型参数，到使用时再决定其具体的类型。</p>
+<p>泛型是编译时的特性，在编译时编译器对会对泛型进行类型检查并在类的‘边界（入参和返回）’处添加一些额外的转型代码，以此来保证泛型运行时的类型安全。我们在使用时看上去像是用具体的类型替换了我们申明的类型参数。但实现上在编译后参化类型信息就丢失了，我们指定的具体的类型在运行时已经被擦除了。</p>
+<p>Java采用类型擦除，而不像c++一样的类型替换也是无奈之举，因为java 5之前没有泛型，为了兼容java 5之前的代码而无奈选择类型擦除。</p>
+<p>名词解释：</p>
+<ul>
+<li>类型参数：声明泛型类、接口或方法时在尖括号中申明的类型参数，如List的E</li>
+<li>泛型类：声明了类型参数的类、接口和方法分别称为泛型类、泛型接口和泛型方法。</li>
+<li>参数化类型：在使用泛型类时指定了具体的类型后称为参数化类型，如List</li>
+<li>原始类型：参数化类型的泛型类的 <code>Class</code>，如List的原始类型为<code>List</code>，<code>List[]</code>的原始类型也为 <code>List</code></li>
+</ul>
+<h1 id="2-泛型的定义和使用"><a href="#2-泛型的定义和使用" class="headerlink" title="2.泛型的定义和使用"></a>2.泛型的定义和使用</h1><h2 id="2-1泛型类"><a href="#2-1泛型类" class="headerlink" title="2.1泛型类"></a>2.1泛型类</h2><p>​    在类名之后使用尖括号声明类型参数，声明的类型参数可以像普通类型一样用在类型声明处使用，到使用时再决定其具体类型，然后编译器会帮我们处理一些类型类型转换的细节。</p>
+<p>​    </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Holder</span>&lt;T&gt; &#123;</span><br><span class="line">    T val;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Holder</span><span class="params">(T val)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> T <span class="title function_">getVal</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setVal</span><span class="params">(T val)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.val = val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Holder&lt;String&gt; strHolder = <span class="keyword">new</span> <span class="title class_">Holder</span>&lt;String&gt;(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> h.getVal();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在使用时指定了的 <code>Holder</code> 的类型参数为 <code>String</code>。可以将 <code>getVal()</code> 的返回值直接赋给一个 <code>String</code> 变量，而不用显示的转型。在使用 <code>setVal</code> 时也必须传入 <code>String</code> 类或其子类，若入参不是 <code>String</code> 或其子类那么编译时会报错。</p>
+<p>在Java7之前 <code>new</code> 参数化类型时需要指定类型，但在Java7之后 <code>new</code> 操作可以不用显示指定类型，编译器会自动推导出来</p>
+
       
     </div>
     <footer class="article-footer">
