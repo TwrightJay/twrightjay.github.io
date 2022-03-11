@@ -34,4 +34,23 @@
     <content><![CDATA[<span id="more"></span> 
 ]]></content>
   </entry>
+  <entry>
+    <title>GDB调试指南</title>
+    <url>/2022/03/10/GDB%E8%B0%83%E8%AF%95%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<span id="more"></span> 
+
+<h1 id="1-进程调试"><a href="#1-进程调试" class="headerlink" title="1.进程调试"></a>1.进程调试</h1><p>​        gdb -pid 1881(进程号)</p>
+<p>​        b main.c:100(在main.c文件第一百行加断点)</p>
+<p>​        c (执行监听断点)</p>
+<p>​        bt(查看栈信息)</p>
+<p>​        b(执行下一步)</p>
+<p>​    </p>
+<h1 id="2-coredump文件"><a href="#2-coredump文件" class="headerlink" title="2.coredump文件"></a>2.coredump文件</h1><p>​    <strong>打开coredump产生文件</strong></p>
+<p>​        ulimit -c 1024</p>
+<p>​        ulimit -a</p>
+<p>​    调试coredump文件</p>
+<p>​        gdb core-file /data/cipher_platform_ramdisk/rootfs/lic/core.9981</p>
+<p>​    </p>
+]]></content>
+  </entry>
 </search>
