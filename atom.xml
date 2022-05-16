@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-03-10T03:11:13.228Z</updated>
+  <updated>2022-05-16T09:17:39.016Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="http://example.com/2022/03/10/GDB%E8%B0%83%E8%AF%95%E6%8C%87%E5%8D%97/"/>
     <id>http://example.com/2022/03/10/GDB%E8%B0%83%E8%AF%95%E6%8C%87%E5%8D%97/</id>
     <published>2022-03-10T01:46:16.000Z</published>
-    <updated>2022-03-10T03:11:13.228Z</updated>
+    <updated>2022-05-16T09:17:39.016Z</updated>
     
     <content type="html"><![CDATA[<span id="more"></span> <h1 id="1-进程调试"><a href="#1-进程调试" class="headerlink" title="1.进程调试"></a>1.进程调试</h1><p>​        gdb -pid 1881(进程号)</p><p>​        b main.c:100(在main.c文件第一百行加断点)</p><p>​        c (执行监听断点)</p><p>​        bt(查看栈信息)</p><p>​        b(执行下一步)</p><p>​    </p><h1 id="2-coredump文件"><a href="#2-coredump文件" class="headerlink" title="2.coredump文件"></a>2.coredump文件</h1><p>​    <strong>打开coredump产生文件</strong></p><p>​        ulimit -c 1024</p><p>​        ulimit -a</p><p>​    调试coredump文件</p><p>​        gdb core-file /data/cipher_platform_ramdisk/rootfs/lic/core.9981</p><p>​    </p>]]></content>
     
     
-    <summary type="html">点击阅读前文前, 首页能看到的文章的简短描述</summary>
+    <summary type="html">GDB调试常用指令</summary>
     
     
     
