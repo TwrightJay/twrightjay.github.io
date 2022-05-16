@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>GDB调试指南</title>
+    <url>/2022/03/10/GDB%E8%B0%83%E8%AF%95%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<span id="more"></span> 
+
+<h1 id="1-进程调试"><a href="#1-进程调试" class="headerlink" title="1.进程调试"></a>1.进程调试</h1><p>​        gdb -pid 1881(进程号)</p>
+<p>​        b main.c:100(在main.c文件第一百行加断点)</p>
+<p>​        c (执行监听断点)</p>
+<p>​        bt(查看栈信息)</p>
+<p>​        b(执行下一步)</p>
+<p>​    </p>
+<h1 id="2-coredump文件"><a href="#2-coredump文件" class="headerlink" title="2.coredump文件"></a>2.coredump文件</h1><p>​    <strong>打开coredump产生文件</strong></p>
+<p>​        ulimit -c 1024</p>
+<p>​        ulimit -a</p>
+<p>​    调试coredump文件</p>
+<p>​        gdb core-file /data/cipher_platform_ramdisk/rootfs/lic/core.9981</p>
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>c/c++</category>
+      </categories>
+      <tags>
+        <tag>c/c++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA 泛型介绍</title>
     <url>/2022/03/06/JAVA-%E6%B3%9B%E5%9E%8B%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<span id="more"></span> 
@@ -32,25 +57,6 @@
     <title>shardingsphere 源码分析</title>
     <url>/2022/03/06/shardingsphere-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<span id="more"></span> 
-]]></content>
-  </entry>
-  <entry>
-    <title>GDB调试指南</title>
-    <url>/2022/03/10/GDB%E8%B0%83%E8%AF%95%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<span id="more"></span> 
-
-<h1 id="1-进程调试"><a href="#1-进程调试" class="headerlink" title="1.进程调试"></a>1.进程调试</h1><p>​        gdb -pid 1881(进程号)</p>
-<p>​        b main.c:100(在main.c文件第一百行加断点)</p>
-<p>​        c (执行监听断点)</p>
-<p>​        bt(查看栈信息)</p>
-<p>​        b(执行下一步)</p>
-<p>​    </p>
-<h1 id="2-coredump文件"><a href="#2-coredump文件" class="headerlink" title="2.coredump文件"></a>2.coredump文件</h1><p>​    <strong>打开coredump产生文件</strong></p>
-<p>​        ulimit -c 1024</p>
-<p>​        ulimit -a</p>
-<p>​    调试coredump文件</p>
-<p>​        gdb core-file /data/cipher_platform_ramdisk/rootfs/lic/core.9981</p>
-<p>​    </p>
 ]]></content>
   </entry>
 </search>
