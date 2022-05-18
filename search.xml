@@ -63,6 +63,18 @@
     <title>移位运算</title>
     <url>/2022/05/18/%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
     <content><![CDATA[<span id="more"></span> 
+
+<h3 id="1、一个32bit数据的位、字节读取操作"><a href="#1、一个32bit数据的位、字节读取操作" class="headerlink" title="1、一个32bit数据的位、字节读取操作"></a><strong>1、一个32bit数据的位、字节读取操作</strong></h3><p><strong>（1）获取单字节：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-828faf67b00e1bdb7fecc724e22d5145_720w.jpg?source=1940ef5c" alt="img"></p>
 ]]></content>
+      <categories>
+        <category>C/C++</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+      </tags>
   </entry>
 </search>
