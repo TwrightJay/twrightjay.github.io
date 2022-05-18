@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2022/05/18/%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97/</loc>
+    <loc>http://example.com/2022/03/10/GDB%E8%B0%83%E8%AF%95%E6%8C%87%E5%8D%97/</loc>
     
     <lastmod>2022-05-18</lastmod>
     
@@ -11,27 +11,9 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/03/10/GDB%E8%B0%83%E8%AF%95%E6%8C%87%E5%8D%97/</loc>
+    <loc>http://example.com/2022/05/18/%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97/</loc>
     
-    <lastmod>2022-05-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/03/06/shardingsphere-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</loc>
-    
-    <lastmod>2022-03-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/03/06/JAVA-%E6%B3%9B%E5%9E%8B%E4%BB%8B%E7%BB%8D/</loc>
-    
-    <lastmod>2022-03-06</lastmod>
+    <lastmod>2022-05-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

@@ -89,7 +89,7 @@
 <meta property="og:description" content="GDB调试常用指令">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-10T01:46:16.000Z">
-<meta property="article:modified_time" content="2022-05-16T09:18:41.551Z">
+<meta property="article:modified_time" content="2022-05-18T12:24:12.254Z">
 <meta property="article:author" content="TwrightJay">
 <meta property="article:tag" content="c&#x2F;c++">
 <meta name="twitter:card" content="summary">
@@ -330,18 +330,29 @@
       
         <span id="more"></span> 
 
-<h1 id="1-进程调试"><a href="#1-进程调试" class="headerlink" title="1.进程调试"></a>1.进程调试</h1><p>​        gdb -pid 1881(进程号)</p>
+<h1 id="1-进程调试"><a href="#1-进程调试" class="headerlink" title="1. 进程调试"></a>1. 进程调试</h1><p>​        gdb -pid 1881(进程号)</p>
 <p>​        b main.c:100(在main.c文件第一百行加断点)</p>
 <p>​        c (执行监听断点)</p>
 <p>​        bt(查看栈信息)</p>
 <p>​        b(执行下一步)</p>
 <p>​    </p>
-<h1 id="2-coredump文件"><a href="#2-coredump文件" class="headerlink" title="2.coredump文件"></a>2.coredump文件</h1><p>​    <strong>打开coredump产生文件</strong></p>
+<h1 id="2-coredump文件"><a href="#2-coredump文件" class="headerlink" title="2. coredump文件"></a>2. coredump文件</h1><p>​    <strong>打开coredump产生文件</strong></p>
 <p>​        ulimit -c 1024</p>
 <p>​        ulimit -a</p>
 <p>​    调试coredump文件</p>
 <p>​        gdb core-file /data/cipher_platform_ramdisk/rootfs/lic/core.9981</p>
-<p>​    </p>
+<h1 id="3-已运行程序调试"><a href="#3-已运行程序调试" class="headerlink" title="3. 已运行程序调试"></a>3. 已运行程序调试</h1><p>​    ps命令找到进程id：</p>
+<p>​        <code>$ ps -ef|grep 进程名</code></p>
+<p>​    attach进程id</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ gdb</span><br><span class="line">(gdb) attach 20829</span><br></pre></td></tr></table></figure>
+
+<p>​    直接调试相关进程ＩＤ</p>
+<p>​    <code>gdb hello 20829  </code></p>
+<p>​    或者</p>
+<p>​    <code>gdb hello --pid 20829</code></p>
+<h3 id="已运行程序没有调试信息"><a href="#已运行程序没有调试信息" class="headerlink" title="已运行程序没有调试信息"></a><strong>已运行程序没有调试信息</strong></h3><p>​    为了节省磁盘空间，已经运行的程序通常没有调试信息。但如果又不能停止当前程序重新启动调试，那怎么办呢？还有办法，那就是同样的代码，再编译出一个带调试信息的版本。然后使用和前面提到的方式操作。对于attach方式，在attach之前，使用file命令即可：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ gdb</span><br><span class="line">(gdb) file hello</span><br><span class="line">Reading symbols from hello...done.</span><br><span class="line">(gdb)attach 20829</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -371,10 +382,6 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/2022/03/06/shardingsphere-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" rel="next" title="shardingsphere 源码分析">
-                <i class="fa fa-chevron-left"></i> shardingsphere 源码分析
-              </a>
             
           </div>
 
@@ -461,7 +468,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -523,7 +530,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E8%B0%83%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">1.进程调试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-coredump%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">2.coredump文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E8%BF%9B%E7%A8%8B%E8%B0%83%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">1. 进程调试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-coredump%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">2. coredump文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%B7%B2%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95"><span class="nav-number">3.</span> <span class="nav-text">3. 已运行程序调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%B2%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F%E6%B2%A1%E6%9C%89%E8%B0%83%E8%AF%95%E4%BF%A1%E6%81%AF"><span class="nav-number">3.0.1.</span> <span class="nav-text">已运行程序没有调试信息</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
