@@ -70,6 +70,48 @@
 <p><img src="https://pic1.zhimg.com/80/v2-828faf67b00e1bdb7fecc724e22d5145_720w.jpg?source=1940ef5c" alt="img"></p>
 <p>​    结果：</p>
 <p>​    <img src="https://pic2.zhimg.com/80/v2-61d8fa5303cafb63d04d7f4b6a7f04b1_720w.jpg?source=1940ef5c" alt="img"></p>
+<p><strong>（2）获取某一位：</strong></p>
+<p><img src="https://raw.githubusercontent.com/wenjunlichao1231/image_host/main/202205182006273.png" alt="微信截图_20220518200404"></p>
+<p>示例：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-fcca555c2cbb62b6a10b3ec5dbd4b6b9_720w.jpg?source=1940ef5c" alt="img"></p>
+<p>结果：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-b866068057297b15c1d5f0de303858db_720w.jpg?source=1940ef5c" alt="img"></p>
+<h3 id="2、一个32bit数据的位、字节清零操作"><a href="#2、一个32bit数据的位、字节清零操作" class="headerlink" title="2、一个32bit数据的位、字节清零操作"></a><strong>2、一个32bit数据的位、字节清零操作</strong></h3><p><strong>（1）清零某个字节：</strong></p>
+<p><img src="https://raw.githubusercontent.com/wenjunlichao1231/image_host/main/202205182007164.png" alt="微信截图_20220518200721"></p>
+<p>示例：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-38c63aa6596f616e84ed77911f4d5743_720w.jpg?source=1940ef5c" alt="img"></p>
+<p>结果：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-252b151196a826c8c1d23d22f20fbad1_720w.jpg?source=1940ef5c" alt="img"></p>
+<p><strong>（2）清零某一位：</strong></p>
+<p><img src="https://raw.githubusercontent.com/wenjunlichao1231/image_host/main/202205182008499.png" alt="微信截图_20220518200831"></p>
+<p>示例：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-f0055826218634c6bb29cde53ec9f724_720w.jpg?source=1940ef5c" alt="img"></p>
+<p>结果：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-fb45d2c856a88780ca5119ef5a413f4e_720w.jpg?source=1940ef5c" alt="img"></p>
+<h3 id="3、一个32bit数据的位、字节置1操作"><a href="#3、一个32bit数据的位、字节置1操作" class="headerlink" title="3、一个32bit数据的位、字节置1操作"></a><strong>3、一个32bit数据的位、字节置1操作</strong></h3><p><strong>（1）置某个字节为1：</strong></p>
+<p><img src="https://raw.githubusercontent.com/wenjunlichao1231/image_host/main/202205182009843.png" alt="微信截图_20220518200933"></p>
+<p>示例：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-116d7b0ebb6cf5d5038c88906ced647e_720w.jpg?source=1940ef5c" alt="img"></p>
+<p>结果：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-50784554281bbe99fe63335a49339265_720w.jpg?source=1940ef5c" alt="img"></p>
+<p><strong>（2）置位某一位：</strong></p>
+<p><img src="https://raw.githubusercontent.com/wenjunlichao1231/image_host/main/202205182010422.png" alt="微信截图_20220518201027"></p>
+<p>示例：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-a1755837c51555d2966abc9d94097957_720w.jpg?source=1940ef5c" alt="img"></p>
+<p>结果：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-3d1894f914522c0cd3578987e2bbd267_720w.jpg?source=1940ef5c" alt="img"></p>
+<h3 id="4、判断某一位或某几位连续位的值"><a href="#4、判断某一位或某几位连续位的值" class="headerlink" title="4、判断某一位或某几位连续位的值"></a><strong>4、判断某一位或某几位连续位的值</strong></h3><p><strong>（1）判断某一位的值</strong></p>
+<p>举例说明：判断0x68第三位的值</p>
+<p><img src="https://pica.zhimg.com/80/v2-f26112bb7b338cef585215259aad4fb5_720w.jpg?source=1940ef5c" alt="img"></p>
+<p>结果：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-68f711275c7b92c0eb6dcf1eed6fa8c7_720w.jpg?source=1940ef5c" alt="img"></p>
+<p>也就是说，要判断第几位的值if里就左移几位，在嵌入式编程里，可通过这样的方式来判断寄存器的状态位是否被置位</p>
+<p><strong>（2）判断某几位连续位的值</strong></p>
+<p><img src="https://raw.githubusercontent.com/wenjunlichao1231/image_host/main/202205182014965.png" alt="微信截图_20220518201424"></p>
+<p>示例：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-4394f22e1295fadece437b25d6f28ca6_720w.jpg?source=1940ef5c" alt="img"></p>
+<p>结果：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-3100c6675b51b86fdf913753fb41b84b_720w.jpg?source=1940ef5c" alt="img"></p>
 ]]></content>
       <categories>
         <category>C/C++</category>
