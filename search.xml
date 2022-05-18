@@ -65,7 +65,7 @@
     <content><![CDATA[<span id="more"></span> 
 
 <h3 id="1、一个32bit数据的位、字节读取操作"><a href="#1、一个32bit数据的位、字节读取操作" class="headerlink" title="1、一个32bit数据的位、字节读取操作"></a><strong>1、一个32bit数据的位、字节读取操作</strong></h3><p><strong>（1）获取单字节：</strong></p>
-<p><img src="C:\Users\lic\Downloads\微信截图_20220518185629.png" alt="微信截图_20220518185629"></p>
+<p><img src="https://raw.githubusercontent.com/wenjunlichao1231/image_host/main/202205181958703.png" alt="微信截图_20220518185629"></p>
 <p>示例：</p>
 <p><img src="https://pic1.zhimg.com/80/v2-828faf67b00e1bdb7fecc724e22d5145_720w.jpg?source=1940ef5c" alt="img"></p>
 <p>​    结果：</p>
