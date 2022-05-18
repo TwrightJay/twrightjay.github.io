@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-18T10:50:13.296Z</updated>
+  <updated>2022-05-18T10:53:35.885Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/2022/05/18/%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     <id>http://example.com/2022/05/18/%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97/</id>
     <published>2022-05-18T10:42:09.000Z</published>
-    <updated>2022-05-18T10:50:13.296Z</updated>
+    <updated>2022-05-18T10:53:35.885Z</updated>
     
-    <content type="html"><![CDATA[<span id="more"></span> <h3 id="1、一个32bit数据的位、字节读取操作"><a href="#1、一个32bit数据的位、字节读取操作" class="headerlink" title="1、一个32bit数据的位、字节读取操作"></a><strong>1、一个32bit数据的位、字节读取操作</strong></h3><p><strong>（1）获取单字节：</strong></p><p><img src="C:\Users\lic\AppData\Roaming\Typora\typora-user-images\image-20220518185005593.png" alt="image-20220518185005593"></p><p>示例：</p><p><img src="https://pic1.zhimg.com/80/v2-828faf67b00e1bdb7fecc724e22d5145_720w.jpg?source=1940ef5c" alt="img"></p>]]></content>
+    <content type="html"><![CDATA[<span id="more"></span> <h3 id="1、一个32bit数据的位、字节读取操作"><a href="#1、一个32bit数据的位、字节读取操作" class="headerlink" title="1、一个32bit数据的位、字节读取操作"></a><strong>1、一个32bit数据的位、字节读取操作</strong></h3><p><strong>（1）获取单字节：</strong></p><p><img src="C:\Users\lic\AppData\Roaming\Typora\typora-user-images\image-20220518185005593.png" alt="image-20220518185005593"></p><p>示例：</p><p><img src="https://pic1.zhimg.com/80/v2-828faf67b00e1bdb7fecc724e22d5145_720w.jpg?source=1940ef5c" alt="img"></p><p>​    结果：</p><p>​    <img src="https://pic2.zhimg.com/80/v2-61d8fa5303cafb63d04d7f4b6a7f04b1_720w.jpg?source=1940ef5c" alt="img"></p>]]></content>
     
     
     <summary type="html">计算机中的数在内存中都是以二进制形式进行存储的，用位运算就是直接对整数在内存中的二进制位进行操作，因此其执行效率非常高，在程序中尽量使用位运算进行操作，这会大大提高程序的性能</summary>
