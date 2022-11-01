@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>GDB调试指南</title>
-    <url>/2022/03/10/0XFF%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <title>0XFF的使用</title>
+    <url>/2022/11/01/0XFF%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<span id="more"></span> 
 
-<h1 id="0xff的作用一"><a href="#0xff的作用一" class="headerlink" title="0xff的作用一"></a>0xff的作用一</h1><p>十六进制0xff的长度是一个字节，即八位，二进制为：1111 1111，那么一个 8bit 数与1111 1111与运算还是这个数本身，<strong>但是一个****16bit</strong> <strong>数与</strong> <strong>0xff****就被截断了，比如</strong> <strong>1100110011001100 &amp; 0xff****结果为</strong> <strong>11001100</strong>。那如果想不被截断怎么办？把0xff扩展为二个字节即：0xffff，那么以此类推，0xffffff,0xffffffff都出来了</p>
-<h1 id="0xff的作用二"><a href="#0xff的作用二" class="headerlink" title="0xff的作用二"></a>0xff的作用二</h1><p>java专属，由于java没有unsigned类型，所以为了适应与其他语言二进制通讯时各种数据的一致性，需要做一些处理。</p>
+<h1 id="0xff的作用一"><a href="#0xff的作用一" class="headerlink" title="0xff的作用一:"></a>0xff的作用一:</h1><p>十六进制0xff的长度是一个字节，即八位，二进制为：1111 1111，那么一个 8bit 数与1111 1111与运算还是这个数本身，<strong>但是一个****16bit</strong> <strong>数与</strong> <strong>0xff****就被截断了，比如</strong> <strong>1100110011001100 &amp; 0xff****结果为</strong> <strong>11001100</strong>。那如果想不被截断怎么办？把0xff扩展为二个字节即：0xffff，那么以此类推，0xffffff,0xffffffff都出来了</p>
+<h2 id="0xff的作用二"><a href="#0xff的作用二" class="headerlink" title="0xff的作用二:"></a>0xff的作用二:</h2><p>java专属，由于java没有unsigned类型，所以为了适应与其他语言二进制通讯时各种数据的一致性，需要做一些处理。</p>
 <p>最直观的例子：<strong>int a = -127 &amp; 0xFF ; //</strong> <strong>等同于</strong> <strong>unsigned int c = 129; (<strong><strong>这里的</strong></strong>-127<strong><strong>与</strong></strong>129**<strong>是字节，只为了直观而写的具体数字</strong></strong>)**</p>
 <p>这里要严格说明一点：再32位机器上，0xff实际上是 0x00000000 00000000 00000000 11111111，</p>
 <p>而-127是 11111111 11111111 11111111 10000001 (补码形式), 那么-127 &amp; 0xff的结果自然是</p>
