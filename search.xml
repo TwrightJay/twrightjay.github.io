@@ -28,7 +28,6 @@
 <h3 id="已运行程序没有调试信息"><a href="#已运行程序没有调试信息" class="headerlink" title="已运行程序没有调试信息"></a><strong>已运行程序没有调试信息</strong></h3><p>​    为了节省磁盘空间，已经运行的程序通常没有调试信息。但如果又不能停止当前程序重新启动调试，那怎么办呢？还有办法，那就是同样的代码，再编译出一个带调试信息的版本。然后使用和前面提到的方式操作。对于attach方式，在attach之前，使用file命令即可：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ gdb</span><br><span class="line">(gdb) file hello</span><br><span class="line">Reading symbols from hello...done.</span><br><span class="line">(gdb)attach 20829</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202211011507956.jpg"></p>
 ]]></content>
       <categories>
         <category>c/c++</category>
@@ -98,5 +97,19 @@
       <tags>
         <tag>C/C++</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/11/01/oxff%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="oxff的使用"><a href="#oxff的使用" class="headerlink" title="oxff的使用"></a>oxff的使用</h1><h2 id="0xff的作用一"><a href="#0xff的作用一" class="headerlink" title="0xff的作用一"></a>0xff的作用一</h2><p>十六进制0xff的长度是一个字节，即八位，二进制为：1111 1111，那么一个 8bit 数与1111 1111与运算还是这个数本身，<strong>但是一个****16bit</strong> <strong>数与</strong> <strong>0xff****就被截断了，比如</strong> <strong>1100110011001100 &amp; 0xff****结果为</strong> <strong>11001100</strong>。那如果想不被截断怎么办？把0xff扩展为二个字节即：0xffff，那么以此类推，0xffffff,0xffffffff都出来了</p>
+<h2 id="0xff的作用二"><a href="#0xff的作用二" class="headerlink" title="0xff的作用二"></a>0xff的作用二</h2><p>java专属，由于java没有unsigned类型，所以为了适应与其他语言二进制通讯时各种数据的一致性，需要做一些处理。</p>
+<p>最直观的例子：<strong>int a = -127 &amp; 0xFF ; //</strong> <strong>等同于</strong> <strong>unsigned int c = 129; (<strong><strong>这里的</strong></strong>-127<strong><strong>与</strong></strong>129**<strong>是字节，只为了直观而写的具体数字</strong></strong>)**</p>
+<p>这里要严格说明一点：再32位机器上，0xff实际上是 0x00000000 00000000 00000000 11111111，</p>
+<p>而-127是 11111111 11111111 11111111 10000001 (补码形式), 那么-127 &amp; 0xff的结果自然是</p>
+<p>00000000 00000000 00000000 10000001 即 129.</p>
+<p>简而言之，该作用主要是为了将 有符号数转换为无符号数。</p>
+<p>将int a转换成字节，一般情况下，int 4字节，那么需要4个byte来保存，又因为java是大端排序，那么byte[0]为最高位，所以需要&gt;&gt;24,这么一个个的把a的4个字节取出存入byte数组中，这里0xff不仅截断，而且还将有符号转换成了无符号。</p>
+<p>那么将字节转换回去就不一样了，不是截断而是融合 ，因此需要将&amp; 改为 |，并且还得把每个字节移到所在实际位置，比如byte[0]是最高位，因此还得将其移到4个字节的头部即需要&lt;&lt;24，那么后续得以此类推。一个完成的int32型就出现了。但是由于java的原因，再做位移操作之前还是不能少了有符号转无符号操作</p>
+]]></content>
   </entry>
 </search>

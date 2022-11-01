@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="TwrightJay的博客" type="application/atom+xml" />
 
@@ -81,11 +83,15 @@
 
 
 
-<meta property="og:type" content="website">
+<meta name="description" content="oxff的使用0xff的作用一十六进制0xff的长度是一个字节，即八位，二进制为：1111 1111，那么一个 8bit 数与1111 1111与运算还是这个数本身，但是一个****16bit 数与 0xff****就被截断了，比如 1100110011001100 &amp; 0xff****结果为 11001100。那如果想不被截断怎么办？把0xff扩展为二个字节即：0xffff，那么以此类推">
+<meta property="og:type" content="article">
 <meta property="og:title" content="TwrightJay的博客">
-<meta property="og:url" content="http://example.com/tags/C-C/index.html">
+<meta property="og:url" content="http://example.com/2022/11/01/oxff%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="TwrightJay的博客">
+<meta property="og:description" content="oxff的使用0xff的作用一十六进制0xff的长度是一个字节，即八位，二进制为：1111 1111，那么一个 8bit 数与1111 1111与运算还是这个数本身，但是一个****16bit 数与 0xff****就被截断了，比如 1100110011001100 &amp; 0xff****结果为 11001100。那如果想不被截断怎么办？把0xff扩展为二个字节即：0xffff，那么以此类推">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-01T07:13:41.471Z">
+<meta property="article:modified_time" content="2022-11-01T07:13:44.523Z">
 <meta property="article:author" content="TwrightJay">
 <meta name="twitter:card" content="summary">
 
@@ -117,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/tags/C-C/"/>
+  <link rel="canonical" href="http://example.com/2022/11/01/oxff的使用/"/>
 
 
 
 
 
-  <title>Tag: C/C++ | TwrightJay的博客</title>
+  <title> | TwrightJay的博客</title>
   
 
 
@@ -142,7 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,54 +222,149 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>C/C++<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/01/oxff%E7%9A%84%E4%BD%BF%E7%94%A8/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TwrightJay的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2022/05/18/%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97/" itemprop="url">
-              
-                <span itemprop="name">移位运算</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2022-05-18T18:42:09+08:00"
-              content="2022-05-18" >
-          05-18
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-11-01T15:13:41+08:00">
+                2022-11-01
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="oxff的使用"><a href="#oxff的使用" class="headerlink" title="oxff的使用"></a>oxff的使用</h1><h2 id="0xff的作用一"><a href="#0xff的作用一" class="headerlink" title="0xff的作用一"></a>0xff的作用一</h2><p>十六进制0xff的长度是一个字节，即八位，二进制为：1111 1111，那么一个 8bit 数与1111 1111与运算还是这个数本身，<strong>但是一个****16bit</strong> <strong>数与</strong> <strong>0xff****就被截断了，比如</strong> <strong>1100110011001100 &amp; 0xff****结果为</strong> <strong>11001100</strong>。那如果想不被截断怎么办？把0xff扩展为二个字节即：0xffff，那么以此类推，0xffffff,0xffffffff都出来了</p>
+<h2 id="0xff的作用二"><a href="#0xff的作用二" class="headerlink" title="0xff的作用二"></a>0xff的作用二</h2><p>java专属，由于java没有unsigned类型，所以为了适应与其他语言二进制通讯时各种数据的一致性，需要做一些处理。</p>
+<p>最直观的例子：<strong>int a = -127 &amp; 0xFF ; //</strong> <strong>等同于</strong> <strong>unsigned int c = 129; (<strong><strong>这里的</strong></strong>-127<strong><strong>与</strong></strong>129**<strong>是字节，只为了直观而写的具体数字</strong></strong>)**</p>
+<p>这里要严格说明一点：再32位机器上，0xff实际上是 0x00000000 00000000 00000000 11111111，</p>
+<p>而-127是 11111111 11111111 11111111 10000001 (补码形式), 那么-127 &amp; 0xff的结果自然是</p>
+<p>00000000 00000000 00000000 10000001 即 129.</p>
+<p>简而言之，该作用主要是为了将 有符号数转换为无符号数。</p>
+<p>将int a转换成字节，一般情况下，int 4字节，那么需要4个byte来保存，又因为java是大端排序，那么byte[0]为最高位，所以需要&gt;&gt;24,这么一个个的把a的4个字节取出存入byte数组中，这里0xff不仅截断，而且还将有符号转换成了无符号。</p>
+<p>那么将字节转换回去就不一样了，不是截断而是融合 ，因此需要将&amp; 改为 |，并且还得把每个字节移到所在实际位置，比如byte[0]是最高位，因此还得将其移到4个字节的头部即需要&lt;&lt;24，那么后续得以此类推。一个完成的int32型就出现了。但是由于java的原因，再做位移操作之前还是不能少了有符号转无符号操作</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2022/05/18/%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="next" title="移位运算">
+                <i class="fa fa-chevron-left"></i> 移位运算
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -271,6 +372,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -291,8 +396,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -359,6 +473,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#oxff%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">oxff的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0xff%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%80"><span class="nav-number">1.1.</span> <span class="nav-text">0xff的作用一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0xff%E7%9A%84%E4%BD%9C%E7%94%A8%E4%BA%8C"><span class="nav-number">1.2.</span> <span class="nav-text">0xff的作用二</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -492,6 +622,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -556,4 +690,3 @@
 
 </body>
 </html>
-html>
