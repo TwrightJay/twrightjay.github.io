@@ -28,6 +28,7 @@
 <h3 id="已运行程序没有调试信息"><a href="#已运行程序没有调试信息" class="headerlink" title="已运行程序没有调试信息"></a><strong>已运行程序没有调试信息</strong></h3><p>​    为了节省磁盘空间，已经运行的程序通常没有调试信息。但如果又不能停止当前程序重新启动调试，那怎么办呢？还有办法，那就是同样的代码，再编译出一个带调试信息的版本。然后使用和前面提到的方式操作。对于attach方式，在attach之前，使用file命令即可：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$ gdb</span><br><span class="line">(gdb) file hello</span><br><span class="line">Reading symbols from hello...done.</span><br><span class="line">(gdb)attach 20829</span><br></pre></td></tr></table></figure>
 
+<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202211011501645.jpg"></p>
 ]]></content>
       <categories>
         <category>c/c++</category>
@@ -44,9 +45,9 @@
 <h3 id="1、一个32bit数据的位、字节读取操作"><a href="#1、一个32bit数据的位、字节读取操作" class="headerlink" title="1、一个32bit数据的位、字节读取操作"></a><strong>1、一个32bit数据的位、字节读取操作</strong></h3><p><strong>（1）获取单字节：</strong></p>
 <p><img src="https://raw.githubusercontent.com/wenjunlichao1231/image_host/main/202205181958703.png" alt="微信截图_20220518185629"></p>
 <p>示例：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-828faf67b00e1bdb7fecc724e22d5145_720w.jpg?source=1940ef5c" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/v2-828faf67b00e1bdb7fecc724e22d5145_720w.jpg" alt="img"></p>
 <p>​    结果：</p>
-<p>​    <img src="https://pic2.zhimg.com/80/v2-61d8fa5303cafb63d04d7f4b6a7f04b1_720w.jpg?source=1940ef5c" alt="img"></p>
+<p>​    <img src="https://pic2.zhimg.com/80/v2-61d8fa5303cafb63d04d7f4b6a7f04b1_720w.jpg?source=1940ef5c" alt="img">    </p>
 <p><strong>（2）获取某一位：</strong></p>
 <p><img src="https://raw.githubusercontent.com/wenjunlichao1231/image_host/main/202205182006273.png" alt="微信截图_20220518200404"></p>
 <p>示例：</p>
