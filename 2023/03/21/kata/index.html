@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="c/c++," />
 
 
 
@@ -83,22 +83,23 @@
 
 
 
-<meta name="description" content="云密码机使用KATA  在统信UOS安装SNAP,可直接通过以下指令： 1sudo apt update &amp;&amp; sudo apt install snapd 安装kvm，qemu－kvm，参考教程参照云密码机的KVM安装教程  解压文件 kata-containers-core.tar.xz  到指定的任意目录，可以获取到＊.assert和＊.snap文件  安装core  &#96;&#96;&#96;">
+<meta name="description" content="Docker使用KATA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TwrightJay的博客">
+<meta property="og:title" content="Docker使用KATA">
 <meta property="og:url" content="http://example.com/2023/03/21/kata/index.html">
 <meta property="og:site_name" content="TwrightJay的博客">
-<meta property="og:description" content="云密码机使用KATA  在统信UOS安装SNAP,可直接通过以下指令： 1sudo apt update &amp;&amp; sudo apt install snapd 安装kvm，qemu－kvm，参考教程参照云密码机的KVM安装教程  解压文件 kata-containers-core.tar.xz  到指定的任意目录，可以获取到＊.assert和＊.snap文件  安装core  &#96;&#96;&#96;">
+<meta property="og:description" content="Docker使用KATA">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211502664.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211507233.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211546611.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211546659.png">
-<meta property="article:published_time" content="2023-03-21T06:33:05.336Z">
-<meta property="article:modified_time" content="2023-03-21T08:19:09.332Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211631706.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211632849.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211632645.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211633577.png">
+<meta property="article:published_time" content="2023-03-21T07:27:16.000Z">
+<meta property="article:modified_time" content="2023-03-21T08:33:14.635Z">
 <meta property="article:author" content="TwrightJay">
+<meta property="article:tag" content="c&#x2F;c++">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211502664.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211631706.png">
 
 
 
@@ -134,7 +135,7 @@
 
 
 
-  <title> | TwrightJay的博客</title>
+  <title>Docker使用KATA | TwrightJay的博客</title>
   
 
 
@@ -258,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Docker使用KATA</h1>
         
 
         <div class="post-meta">
@@ -270,7 +271,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-21T14:33:05+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-21T15:27:16+08:00">
                 2023-03-21
               </time>
             
@@ -281,6 +282,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c-c/" itemprop="url" rel="index">
+                    <span itemprop="name">c/c++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -293,6 +316,10 @@
 
           
 
+          
+              <div class="post-description">
+                  Docker使用KATA
+              </div>
           
 
         </div>
@@ -308,7 +335,11 @@
       
 
       
-        <p>云密码机使用KATA</p>
+        <span id="more"></span> 
+
+
+
+<p>云密码机使用KATA</p>
 <ol>
 <li><p>在统信UOS安装SNAP,可直接通过以下指令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install snapd</span><br></pre></td></tr></table></figure></li>
@@ -317,20 +348,18 @@
 <li><p>解压文件 <code>kata-containers-core.tar.xz</code>  到指定的任意目录，可以获取到＊.assert和＊.snap文件</p>
 </li>
 <li><p>安装core</p>
-<ul>
-<li>```bash<br>snap ack core_9066.assert<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```bash</span><br><span class="line">  snap install core_9066.snap</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap ack core_9066.assert</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap install core_9066.snap</span><br></pre></td></tr></table></figure></li>
 <li><p>安装kata-container</p>
-<ul>
-<li>```bash<br>snap ack kata-containers_615.assert<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```bash</span><br><span class="line">  snap install kata-containers_615.snap --classic	</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap ack kata-containers_615.assert</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">snap install kata-containers_615.snap --classic	</span><br></pre></td></tr></table></figure></li>
 <li><p>安装完成后通过<code>kata-runtime --version</code>查看kata的版本，如下图所示：</p>
-<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211502664.png" alt="image-20230321145823883"></p>
+<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211631706.png" alt="image-20230321163142832"></p>
 </li>
 <li><p>运行命令<code>/snap/bin/kata-containers.runtime kata-check</code>检查执行环境，如下图所示则环境运行正常</p>
-<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211507233.png" alt="image-20230321150750870"></p>
+<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211632849.png" alt="image-20230321163210385"></p>
 </li>
 <li><p>将/snap/kata-containers/current/usr/bin加入PATH环境变量或者将目录中的文件复制到/usr/bin/目录下</p>
 </li>
@@ -343,8 +372,8 @@
 <li><p>以<strong>kata-runtime模式</strong>启动docker 容器，这样容易有自己单独的内核</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run --name kata-test --runtime=kata-runtime -it centos:7 sh </span><br><span class="line">docker run -it ddef2417b9c9 /bin/bash</span><br><span class="line">docker <span class="built_in">exec</span> -it ddef2417b9c9 /bin/bash</span><br></pre></td></tr></table></figure></li>
 <li><p>查看容器内核对比宿主机内核,可以看出容器有自己单独的内核</p>
-<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211546611.png" alt="image-20230321154548507"></p>
-<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211546659.png" alt="image-20230321154622569"></p>
+<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211632645.png" alt="image-20230321163240649"></p>
+<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211633577.png" alt="image-20230321163305746"></p>
 </li>
 </ol>
 
@@ -361,6 +390,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c-c/" rel="tag"># c/c++</a>
+          
+        </div>
       
 
       
