@@ -144,10 +144,10 @@
 
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">snap install kata-containers_615.snap --classic	</span><br></pre></td></tr></table></figure></li>
 <li><p>安装完成后通过<code>kata-runtime --version</code>查看kata的版本，如下图所示：</p>
-<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211631706.png" alt="image-20230321163142832"></p>
+<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303261228005.png" alt="image-20230326122844685"></p>
 </li>
 <li><p>运行命令<code>/snap/bin/kata-containers.runtime kata-check</code>检查执行环境，如下图所示则环境运行正常</p>
-<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211632849.png" alt="image-20230321163210385"></p>
+<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303261229333.png" alt="image-20230326122904980"></p>
 </li>
 <li><p>将/snap/kata-containers/current/usr/bin加入PATH环境变量或者将目录中的文件复制到/usr/bin/目录下</p>
 </li>
@@ -160,8 +160,7 @@
 <li><p>以<strong>kata-runtime模式</strong>启动docker 容器，这样容易有自己单独的内核</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run --name kata-test --runtime=kata-runtime -it centos:7 sh </span><br><span class="line">docker run -it ddef2417b9c9 /bin/bash</span><br><span class="line">docker <span class="built_in">exec</span> -it ddef2417b9c9 /bin/bash</span><br></pre></td></tr></table></figure></li>
 <li><p>查看容器内核对比宿主机内核,可以看出容器有自己单独的内核</p>
-<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211632645.png" alt="image-20230321163240649"></p>
-<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303211633577.png" alt="image-20230321163305746"></p>
+<p><img src="https://raw.githubusercontent.com/TwrightJay/twrightjay.github.io/main/202303261229933.png" alt="image-20230326122924600"></p>
 </li>
 </ol>
 ]]></content>
